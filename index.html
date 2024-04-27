@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+
+<body>
+  <dialog>
+    <button id="close">Close</button>
+    <form>
+      <div>
+        <label for="book-title">Title</label>
+        <Input type="text" id="book-title"></Input>
+      </div>
+      <div>
+        <label for="book-author">Author</label>
+        <Input type="text" id="book-author"></Input>
+      </div>
+      <div>
+        <label for="book-pages">Pages</label>
+        <Input type="tel" id="book-pages"></Input>
+      </div>
+      <div>
+        <label for="book-read">Read</label>
+        <input type="checkbox" name="read" id="book-read">
+      </div>
+      <button type="submit" id="submit">Add</button>
+    </form>
+  </dialog>
+  <div>
+    <button id="add-book">Add Book</button>
+  </div>
+  <div class="card-wrapper"></div>
+</body>
+
+</html>
