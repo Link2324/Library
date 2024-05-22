@@ -1,21 +1,29 @@
 body {
-    background-color: lightgray;
+    background-color: rgb(240, 240, 240);
+    padding: 0;
+    margin: 0;
 }
 
 .card-wrapper {
+    padding: 20px;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
 }
 
 .card {
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
     background-color: white;
-    width: 200px;
-    height: 100px;
+    max-width: 200px;
+    min-height: 100px;
     border-radius: 10px;
     padding: 10px;
     box-shadow: 4px 4px 8px 0px rgb(174, 174, 174);
+}
+
+span {
+    align-self:flex-end;
 }
 
 #add-book, #close, #submit {
@@ -34,9 +42,12 @@ body {
 
 #submit {
     padding: 4px 32px;
+    margin: 0 auto;
+    margin-top: 20px;
 }
 
 #close {
+    background-color: rgb(225, 87, 87);
     margin-left: auto;
     padding: 4px;
     margin-bottom: 8px;
@@ -49,11 +60,22 @@ form div {
 
 form div>input[type="checkbox"] {
     justify-self: start;
+    margin: 0;
 }
 
 input[type="text"], input[type="tel"] {
+    border: 1px solid gray;
     appearance: none;
     border-radius: 4px;
     height: 12px;
     margin-bottom: 12px;
+}
+
+input[type="text"]:focus, input[type="tel"]:focus {
+    outline: none;
+    background-color: whitesmoke;
+}
+
+dialog {
+    border: none;
 }

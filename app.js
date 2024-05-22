@@ -1,18 +1,22 @@
 "use strict"
 
-const myLibrary = 
-    [new Book("The Hobbit", "J.R.R. Tolkein", 204, true),
-     new Book("The Lord of the Rings", "J.R.R Tolkein", 500, false)];
+const myLibrary = [];
 
-function Book(title, author, pages, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
-    this.info = function () {
+class Book {
+    constructor(title, author, pages, read) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+    }
+
+    info = function () {
         return `${title} by ${author}, ${pages} pages, ${this.read}`;
     }
 }
+
+myLibrary.push(new Book("The Hobbit", "J.R.R. Tolkein", 204, true));
+myLibrary.push(new Book("The Lord of the Rings", "J.R.R Tolkein", 500, false));
 
 const cardWrapper = document.querySelector('.card-wrapper');
 
@@ -30,7 +34,7 @@ function displayBooks() {
                  <input type="checkbox" name="read" id="${i}" ${book.read ? 'checked' : ''}>
                </div>
             </div>`;
-            i++;
+        i++;
     }
 }
 
@@ -55,7 +59,7 @@ closeModal.addEventListener('click', e => {
     modal.close();
 })
 
-addBook.addEventListener('click', (e)=> {
+addBook.addEventListener('click', (e) => {
     modal.showModal();
 })
 
@@ -68,7 +72,7 @@ submit.addEventListener('click', (e) => {
 })
 
 cardWrapper.addEventListener('click', (e) => {
-    if(e.target.className === "delete") {
+    if (e.target.className === "delete") {
         const parentCard = e.target.parentNode;
         const cardIndex = parentCard.getAttribute("card-index");
         myLibrary.splice(cardIndex, 1);
